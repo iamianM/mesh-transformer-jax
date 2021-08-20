@@ -1,0 +1,41 @@
+{
+  "layers": 28,
+  "d_model": 4096,
+  "n_heads": 16,
+  "n_vocab": 1128,
+  "norm": "layernorm",
+  "pe": "rotary",
+  "pe_rotary_dims": 64,
+
+  "seq": 2048,
+  "cores_per_replica": 8,
+  "per_replica_batch": 2,
+  "gradient_accumulation_steps": 32,
+
+  "warmup_steps": 2800,
+  "anneal_steps": 25479,
+  "lr": 1.2e-4,
+  "end_lr": 1.2e-5,
+  "weight_decay": 0.1,
+  "total_steps": 28279,
+
+  "tpu_size": 8,
+
+  "bucket": "gpt-j_records_eur",
+  "model_dir": "models_cp_crypto_from_scratch",
+
+  "train_set": "crypto_scratch.train.index",
+  "val_set": {
+    "crypto_scratch": "crypto_scratch.val.index"
+  },
+
+  "eval_harness_tasks": [],
+
+  "val_batches": 100,
+  "val_every": 500,
+  "ckpt_every": 1000,
+  "keep_every": 5000,
+
+  "name": "GPT3_crypto_scratch",
+  "comment": ""
+}
